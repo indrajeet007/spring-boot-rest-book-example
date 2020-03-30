@@ -8,7 +8,7 @@ LABEL maintainer="indrajit"
 EXPOSE 9090
 
 # The application's jar file
-ARG JAR_FILE=target/books_service-1.0.0-SNAPSHOT.jar
+ARG JAR_FILE=target/books_service-2.0.0-SNAPSHOT.jar
 
 # Add the application's jar to the container
 ADD ${JAR_FILE} books_service.jar
