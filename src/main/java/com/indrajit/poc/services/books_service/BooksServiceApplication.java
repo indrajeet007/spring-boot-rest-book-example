@@ -22,7 +22,7 @@ public class BooksServiceApplication implements CommandLineRunner {
 
 	private void getActiveProfiles() {
 		for (final String profileName : environment.getActiveProfiles()) {
-			logger.info("Current active profile - " + profileName);
+			logger.info("Current active profile: " + profileName.toUpperCase());
 		}
 	}
 
