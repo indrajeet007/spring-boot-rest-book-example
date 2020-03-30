@@ -2,6 +2,7 @@ package com.indrajit.poc.services.books_service.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Book {
@@ -9,10 +10,12 @@ public class Book {
     @Id
     private String id = "";
     private String title = "";
+    private Date publishDate = null;
     private String author = "";
     private String type = "";
     private double price = 0;
     private int numOfPages = 0;
+    private String publisher = "";
     private String language = "";
     private String isbn13 = "";
 
@@ -20,13 +23,15 @@ public class Book {
 
     }
 
-    public Book(String id, String title, String author, String type, double price, int numOfPages, String language, String isbn13) {
+    public Book(String id, String title, Date publishDate, String author, String type, double price, int numOfPages, String publisher, String language, String isbn13) {
         this.id = id;
         this.title = title;
+        this.publishDate = publishDate;
         this.author = author;
         this.type = type;
         this.price = price;
         this.numOfPages = numOfPages;
+        this.publisher = publisher;
         this.language = language;
         this.isbn13 = isbn13;
     }
@@ -45,6 +50,14 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Date getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
     }
 
     public String getAuthor() {
@@ -79,6 +92,14 @@ public class Book {
         this.numOfPages = numOfPages;
     }
 
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
     public String getLanguage() {
         return language;
     }
@@ -100,10 +121,12 @@ public class Book {
         return "Book{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
+                ", publishDate=" + publishDate +
                 ", author='" + author + '\'' +
                 ", type='" + type + '\'' +
                 ", price=" + price +
                 ", numOfPages=" + numOfPages +
+                ", publisher='" + publisher + '\'' +
                 ", language='" + language + '\'' +
                 ", isbn13='" + isbn13 + '\'' +
                 '}';
